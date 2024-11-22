@@ -299,6 +299,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 156205681994372542, guid: 2521a30bc9f056f42b40cf453780670a, type: 3}
   m_PrefabInstance: {fileID: 1662760954}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &200745644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 156205681994372542, guid: 91fc0bbb00edf154585e96fc92c10dd2, type: 3}
+  m_PrefabInstance: {fileID: 1648285278}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &200988983
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -519,11 +524,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4776089527113506134, guid: ac80b7c40c2e6ba48b61a9325b0ecc2f, type: 3}
       propertyPath: Editor_Tabs1
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4776089527113506134, guid: ac80b7c40c2e6ba48b61a9325b0ecc2f, type: 3}
       propertyPath: Editor_Tabs2
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4887289103932253214, guid: ac80b7c40c2e6ba48b61a9325b0ecc2f, type: 3}
       propertyPath: m_RootOrder
@@ -1370,13 +1375,10 @@ MonoBehaviour:
   - {fileID: 575895483873335260, guid: 31769d5aaa9be664ea9c2007eac052f1, type: 3}
   spawnedWeapon:
   - {fileID: 151590735}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 2116656987}
-  - {fileID: 0}
   - {fileID: 964503391}
   - {fileID: 1697441447}
-  - {fileID: 0}
+  - {fileID: 200745644}
   spawnedEnemy:
   - {fileID: 7536160569167986922, guid: a852fc8c0b0f7444dbb48458c657a33c, type: 3}
   StartingRoom: {fileID: 1218812964}
@@ -2279,7 +2281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 269226259427615212, guid: 91fc0bbb00edf154585e96fc92c10dd2, type: 3}
       propertyPath: Editor_Tabs2
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 269226259427615212, guid: 91fc0bbb00edf154585e96fc92c10dd2, type: 3}
       propertyPath: TwoHandIK.ConstantValue
