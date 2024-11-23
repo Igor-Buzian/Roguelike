@@ -1,4 +1,5 @@
 using Leopotam.Ecs;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyManager : MonoBehaviour
@@ -7,9 +8,7 @@ public class EnemyManager : MonoBehaviour
     private EcsSystems _systems;
 
     [Header("Enemy Settings")]
-    public GameObject enemyPrefab; // Префаб врага
-    public int enemyCount = 5; // Количество врагов для спавна
-
+    public GameObject enemyPrefab;
     void Start()
     {
         // Инициализация ECS
@@ -18,24 +17,18 @@ public class EnemyManager : MonoBehaviour
         _systems.Add(new EnemySystem());
         //_systems.Add(new EnemyCollisionSystem());
         _systems.Init();
-
-        SpawnEnemies(); // Создаем врагов
     }
 
-    void Update()
-    {
-        _systems.Run(); // Запускаем системы ECS
-    }
+     public void InitializeEnemies(RoomsPlacer roomsPlacer)
+     {
+         SpawnEnemies(roomsPlacer.ECSEnemySpawnPositions);
+     }
 
-    private void SpawnEnemies()
+    private void SpawnEnemies(List<Vector3> enemyPositions)
     {
-        for (int i = 0; i < enemyCount; i++)
+        foreach (var position in enemyPositions)
         {
-            // Генерируем случайные позиции для спавна
-            Vector3 spawnPosition = new Vector3(Random.Range(-10f, 10f), 0, Random.Range(-10f, 10f));
-            GameObject enemyObject = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-
-            // Инициализируем врага в ECS
+            GameObject enemyObject = Instantiate(enemyPrefab, position, Quaternion.identity);
             InitializeEnemy(enemyObject);
         }
     }
@@ -44,19 +37,22 @@ public class EnemyManager : MonoBehaviour
     {
         var enemyEntity = _world.NewEntity();
 
-        // Получаем компоненты врага
         ref var enemy = ref enemyEntity.Get<EnemyComponent>();
-        enemy.health = 4; // Начальное здоровье
-        enemy.moveSpeed = 3f; // Скорость движения врага
-        enemy.transform = enemyObject.transform; // Ссылка на Transform врага
+        enemy.moveSpeed = 3f;
+        enemy.transform = enemyObject.transform;
 
         ref var target = ref enemyEntity.Get<TargetComponent>();
-        target.target = GameObject.FindGameObjectWithTag("Player").transform; // Цель для преследования
+        target.target = GameObject.FindGameObjectWithTag("Player").transform;
+    }
+
+    private void Update()
+    {
+        _systems.Run();
     }
 
     private void OnDestroy()
     {
-        _systems.Destroy(); // Освобождаем ресурсы систем
-        _world.Destroy(); // Освобождаем ресурсы мира
+        _systems.Destroy();
+        _world.Destroy();
     }
 }

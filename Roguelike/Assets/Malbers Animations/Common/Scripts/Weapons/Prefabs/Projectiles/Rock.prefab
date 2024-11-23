@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8751996490293143905}
   m_Layer: 2
   m_Name: Rock
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -278,7 +278,7 @@ MonoBehaviour:
   rb: {fileID: 54232226489785632}
   m_collider: {fileID: 8751996490293143905}
   DragOnImpact: 1
-  Editor_Tabs1: 2
+  Editor_Tabs1: 0
   references:
     version: 2
     RefIds:

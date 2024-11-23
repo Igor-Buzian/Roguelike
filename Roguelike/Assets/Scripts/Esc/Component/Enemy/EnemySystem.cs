@@ -3,7 +3,6 @@ using UnityEngine;
 
 public struct EnemyComponent
 {
-    public int health;
     public float moveSpeed;
     public Transform transform; // Добавлено поле для ссылки на Transform
 }

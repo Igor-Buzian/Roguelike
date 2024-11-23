@@ -12,6 +12,7 @@ TagManager:
   - Water
   - Terrain
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX

@@ -11,7 +11,8 @@ public class RoomsPlacer : MonoBehaviour
     public Room StartingRoom;
 
     private Room[,] spawnedRooms;
-
+    bool EcsEnemy;
+    public List<Vector3> ECSEnemySpawnPositions { get; private set; } = new List<Vector3>(); // Позиции врагов
     private void Awake()
     {
 
@@ -62,7 +63,18 @@ public class RoomsPlacer : MonoBehaviour
 
         Room newRoom = Instantiate(RoomPrefabs[Random.Range(0, RoomPrefabs.Length)]); 
         GameObject newWeapon = Instantiate(spawnedWeapon[Random.Range(0, spawnedWeapon.Length)]);
-        GameObject newEnemy = Instantiate(spawnedEnemy[Random.Range(0, spawnedEnemy.Length)]);
+        GameObject newEnemy;
+        if (Random.Range(0,100) < 70)
+        {
+            newEnemy = Instantiate(spawnedEnemy[0]);
+            EcsEnemy = false;
+        }
+        else
+        {
+            newEnemy = null;
+            EcsEnemy = true;
+        }
+
 
         int limit = 500;
         while (limit-- > 0)
@@ -73,8 +85,14 @@ public class RoomsPlacer : MonoBehaviour
             {
                 newRoom.transform.position = new Vector3(position.x - 5, 0, position.y - 5) * 14;
                 newWeapon.transform.position = new Vector3(position.x - 5, 0, position.y - 5) * 14;
-                newEnemy.transform.position = new Vector3(position.x - 5, 0, position.y - 5) * 14;
-
+                if (EcsEnemy)
+                {
+                    ECSEnemySpawnPositions.Add(new Vector3(position.x - 5, 0, position.y - 5) * 14);
+                }
+                else
+                {
+                    newEnemy.transform.position = new Vector3(position.x - 5, 0, position.y - 5) * 14;
+                }
                 spawnedRooms[position.x, position.y] = newRoom; // Исправлено
                 Debug.Log($"Размещена комната на позиции {position}");
                 return;
@@ -83,7 +101,7 @@ public class RoomsPlacer : MonoBehaviour
 
         Destroy(newRoom.gameObject);
         Destroy(newRoom.gameObject);
-         Destroy(newRoom.gameObject);
+        Destroy(newRoom.gameObject);
     }
 
     private bool ConnectToSomething(Room room, Vector2Int p)
