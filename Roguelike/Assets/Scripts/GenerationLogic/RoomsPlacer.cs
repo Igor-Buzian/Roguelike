@@ -12,18 +12,20 @@ public class RoomsPlacer : MonoBehaviour
 
     private Room[,] spawnedRooms;
 
-    private IEnumerator Start()
+    private void Awake()
     {
+
+        Time.timeScale = 1; // Снова запускаем время
         if (RoomPrefabs == null || RoomPrefabs.Length == 0)
         {
             Debug.LogError("RoomPrefabs не настроены!");
-            yield break;
+            return;
         }
 
         if (StartingRoom == null)
         {
             Debug.LogError("StartingRoom не настроена!");
-            yield break;
+             return;
         }
 
         spawnedRooms = new Room[11, 11];
@@ -31,10 +33,11 @@ public class RoomsPlacer : MonoBehaviour
 
         for (int i = 0; i < 12; i++)
         {
-            yield return new WaitForSecondsRealtime(0.5f); // Уберите это для мгновенной генерации
 
             PlaceOneRoom();
         }
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        PlayerPrefs.SetInt("EnemyCount", enemies.Length);
     }
 
     private void PlaceOneRoom()
