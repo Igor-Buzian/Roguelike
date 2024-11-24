@@ -18,12 +18,18 @@ public class EnemyManager : MonoBehaviour
         //_systems.Add(new EnemyCollisionSystem());
         _systems.Init();
     }
-
-     public void InitializeEnemies(RoomsPlacer roomsPlacer)
+    /// <summary>
+    /// Initialize Enemies in new room
+    /// </summary>
+    /// <param name="roomsPlacer"></param>
+    public void InitializeEnemies(RoomsPlacer roomsPlacer)
      {
          SpawnEnemies(roomsPlacer.ECSEnemySpawnPositions);
      }
-
+    /// <summary>
+    /// Spawn Enemies in new room
+    /// </summary>
+    /// <param
     private void SpawnEnemies(List<Vector3> enemyPositions)
     {
         foreach (var position in enemyPositions)

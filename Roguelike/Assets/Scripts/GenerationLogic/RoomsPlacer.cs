@@ -40,7 +40,9 @@ public class RoomsPlacer : MonoBehaviour
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
         PlayerPrefs.SetInt("EnemyCount", enemies.Length);
     }
-
+    /// <summary>
+    /// Instantiating a new room, objects, and enemies by generating new objects in each location.
+    /// </summary>
     private void PlaceOneRoom()
     {
         HashSet<Vector2Int> vacantPlaces = new HashSet<Vector2Int>();
