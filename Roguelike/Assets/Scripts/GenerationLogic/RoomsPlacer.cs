@@ -87,7 +87,7 @@ public class RoomsPlacer : MonoBehaviour
                 newWeapon.transform.position = new Vector3(position.x - 5, 0, position.y - 5) * 14;
                 if (EcsEnemy)
                 {
-                    ECSEnemySpawnPositions.Add(new Vector3(position.x - 5, 0, position.y - 5) * 14);
+                    ECSEnemySpawnPositions.Add(new Vector3(position.x - 5, .5f, position.y - 5) * 14);
                 }
                 else
                 {

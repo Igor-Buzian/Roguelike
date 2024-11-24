@@ -5,29 +5,22 @@ using UnityEngine;
 
 public class ExplosionEnemy : MonoBehaviour
 {
-    [SerializeField] GameObject Particles;
     [SerializeField] GameObject Enemy;
+    [SerializeField] ParticleSystem[] EnemyParticleSystem;
     MAttackTrigger AttackTrigger;
+    BoxCollider EnemyCollider;
     private void Start()
     {
         AttackTrigger = GetComponent<MAttackTrigger>();
         AttackTrigger.enabled = true;
     }
-    private void OntriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Bullet"))
-        {
-            Exploision();
-        }
-        else if (other.CompareTag("Player"))
-        {
-            Exploision();
-        }
-    }
 
-    void Exploision()
+    public void Exploision()
     {
-        Particles.SetActive(true);
         Enemy.SetActive(false);
+        for(int i = 0; i < EnemyParticleSystem.Length; i++)
+        {
+            EnemyParticleSystem[i].Play();
+        }
     }
 }

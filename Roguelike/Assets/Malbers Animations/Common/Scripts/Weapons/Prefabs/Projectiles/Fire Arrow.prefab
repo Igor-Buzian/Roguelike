@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4000011687228806}
   - component: {fileID: 33000010291608134}
   - component: {fileID: 23000014065217522}
+  - component: {fileID: 4958101504702314757}
   m_Layer: 2
   m_Name: Arrow Mesh
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85,6 +86,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4958101504702314757
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010290526256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.065909125, y: 1.2357966, z: 0.05707916}
+  m_Center: {x: 0.0003700629, y: 0.5175528, z: -0.009279861}
 --- !u!1 &1000013609580904
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +121,7 @@ GameObject:
   - component: {fileID: 82342202747707584}
   m_Layer: 2
   m_Name: Fire Arrow
-  m_TagString: Bullet
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -704,6 +726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireBall
       objectReference: {fileID: 0}
+    - target: {fileID: 1757608949838354, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_TagString
+      value: Bullet
+      objectReference: {fileID: 0}
     - target: {fileID: 4827664309722362, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -766,6 +792,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82662544559373652, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
       propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108367078376698630, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_BoundingSphereOverride.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108367078376698630, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_BoundingSphereOverride.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 108367078376698630, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_BoundingSphereOverride.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108367078376698630, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_BoundingSphereOverride.z
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 135405681865087232, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198184799881596340, guid: 01b2a846938f15d41a98138786d1bf4b, type: 3}

@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 4000011687228806}
   - component: {fileID: 33000010291608134}
   - component: {fileID: 23000014065217522}
+  - component: {fileID: 4905531974930897411}
   m_Layer: 2
   m_Name: Mesh
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4905531974930897411
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000010290526256}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.021872805, y: 0.0804014, z: 0.02525648}
+  m_Center: {x: 0, y: 0.018474625, z: 4.656614e-10}
 --- !u!1 &1000013609580904
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,9 +364,9 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
   rb: {fileID: 0}
-  m_collider: {fileID: 0}
+  m_collider: {fileID: 4905531974930897411}
   DragOnImpact: 1
-  Editor_Tabs1: 2
+  Editor_Tabs1: 0
   references:
     version: 2
     RefIds:
@@ -362,7 +384,7 @@ GameObject:
   - component: {fileID: 96356462734098446}
   m_Layer: 2
   m_Name: Trail
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -38,7 +38,7 @@ public class EnemyManager : MonoBehaviour
         var enemyEntity = _world.NewEntity();
 
         ref var enemy = ref enemyEntity.Get<EnemyComponent>();
-        enemy.moveSpeed = 3f;
+        enemy.moveSpeed = 1.5f;
         enemy.transform = enemyObject.transform;
 
         ref var target = ref enemyEntity.Get<TargetComponent>();
